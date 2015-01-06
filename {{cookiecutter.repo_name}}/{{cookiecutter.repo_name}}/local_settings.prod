@@ -1,0 +1,14 @@
+DEBUG=False
+
+ADMINS = ( ('{{ cookiecutter.author_name }}', '{{ cookiecutter.email }}'), )
+
+DATABASES = {
+    'default': {
+        'ENGINE'	: 'django.db.backends.postgresql_psycopg2',
+        'NAME'		: '{{ cookiecutter.project_name }}',
+        'USER'		: '{{ cookiecutter.project_name }}', 
+        'PASSWORD'	: '{{ cookiecutter.project_name }}', # change this unless your an IDIOT
+        'HOST'		: '127.0.0.1',
+        'PORT'		: '5432',
+    }
+}

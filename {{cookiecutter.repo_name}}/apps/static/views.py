@@ -26,9 +26,3 @@ def page_500(request):
 def index(request):
 	return custom_render(request,'static/index.html', {})
 
-def contact(request):
-	return custom_render(request,'static/contact.html', {})
-	
-def team(request):
-	return custom_render(request,'static/team.html', {})
-
