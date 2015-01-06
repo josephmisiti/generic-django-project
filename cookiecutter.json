@@ -1,0 +1,11 @@
+{
+    "project_name": "project_name is the title of the project.",
+    "repo_name":"repo_name is used for describing the directory structure.",
+    "author_name": "Your Name",
+    "email": "Your email",
+    "description": "A short description of the project.",
+    "year": "2015",
+    "domain_name": "example.com",
+    "version": "0.1.0",
+    "now": "2015/01/15"
+}
