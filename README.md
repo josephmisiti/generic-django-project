@@ -24,7 +24,7 @@ $ cookiecutter https://github.com/josephmisiti/generic-django-project.git
 
 #### Setting Up The Database
 
-I like to use postgres, so I suggest install [PostGreApp](http://postgresapp.com/). One that is installed
+I like to use postgres, so I suggest installing [PostGreApp](http://postgresapp.com/). Once that is installed,
 execute the following commands
 
 ```
@@ -38,7 +38,7 @@ $ python manage.py syncdb
 $ python manage.py migrate
 ```
 
-Done! If you are not using OSX, you're on your own. It is pretty easy to install Postgres on UBUNTU (see fabfile.py), but I have no experience on Windows.
+Done! If you are not using OSX, you're on your own. It's pretty easy to install Postgres on UBUNTU (see fabfile.py), but I have no experience on Windows.
 
 
 If you have any questions or what to help out, send a pull request or reach out at [@josephmisiti](http://www.twitter.com/josephmisiti)
