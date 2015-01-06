@@ -1,5 +1,8 @@
 Django==1.7.2
 psycopg2
+boto
+Fabric
+django-tastypie
 
 # asset compression
 pyyaml
