@@ -17,14 +17,17 @@ embed_assets: datauri
 # Minify JS+CSS. Turn `off` to have uncompressed but concatenated files.
 # Turning this off also makes compile-time near negligible, so it's useful
 # for testing.
-compress_assets: off
+compress_assets: on
 
 allow_debugging: yes
 
 javascripts:
 
  common:
-  - media/js/scendentlabs/globals.js
+  - media/js/vendor/jquery.js
+  - media/js/vendor/underscore.js
+  - media/js/vendor/backbone.js
+  - media/js/vendor/backbone-tastypie.js
 
 stylesheets:
 
