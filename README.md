@@ -38,4 +38,7 @@ $ python manage.py syncdb
 $ python manage.py migrate
 ```
 
-Done !
+Done! If you are not using OSX, your on your own. It is pretty easy to install Postgres on UBUNTU (see fabfile.py), but I have no experience on Windows.
+
+
+If you have any questions or what to help out, send a pull request or reach out at [@josephmisiti](http://www.twitter.com/josephmisiti)
