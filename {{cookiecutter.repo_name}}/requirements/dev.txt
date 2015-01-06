@@ -1,0 +1,5 @@
+-r common.txt
+
+fake-factory==0.4.0 # for faking data in unit tests
+jasmine==2.0.1 # for javascript unit tets
+coverage==3.7.1
