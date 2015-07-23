@@ -1,6 +1,12 @@
 generic-django-project
 ======================
 
+**UPDATE**
+
+If you want to use Heroku to host your Django application, checkout this project
+
+https://github.com/josephmisiti/generic-django-project-heroku
+
 Generic project directory structure for new django applications.
 
 For more info, read my blog post:
