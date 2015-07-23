@@ -1,11 +1,6 @@
 generic-django-project
 ======================
 
-**UPDATE**
-
-If you want to use Heroku to host your Django application, checkout this project
-
-https://github.com/josephmisiti/generic-django-project-heroku
 
 Generic project directory structure for new django applications.
 
@@ -13,6 +8,14 @@ For more info, read my blog post:
 
 https://medium.com/cs-math/f29f6080c131
 
+
+#### Installation on Heroku
+
+If you want to use Heroku to host your Django application, checkout this project
+
+https://github.com/josephmisiti/generic-django-project-heroku
+
+Just follow directions and you should have a django app running on Heroku in a few steps!
 
 #### Installation
 
