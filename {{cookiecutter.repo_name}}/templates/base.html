@@ -5,27 +5,26 @@
 	<head>
 		<title>
 			{% block title %}
-			
+
 			{% endblock %}
 		</title>
-		
+
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+
 		<meta name="description" content="FETCHER is a Public Relations and Event Management Tool designed for professionals. Offering solutions for thoughtful PR engagement while utilizing unparalleled machine learning to make planning, managing and tracking your events easy, fun and seamless."/>
-		
+
 		<meta name="keywords" content="Fetcher, Get Fetcher, Get Fetch, Fetcher NYC, Fetcher New York City, Fetcher Public Relations Software, PR Software, NYC PR Software, Event Planning Software, Fetcher Event Planning Software, Guest List Management, Event Management Software, Party Management Software"/>
-		
+
 		<link rel="icon" type="image/png" href="/media/images/fetcher.ico"/>
-		
-		{% load jammit_tags %}
+
 		{% include_stylesheets "common" %}
 		{% include_javascripts "common" %}
 
 	</head>
 	{% endblock %}
-	
+
 	<body class="menu-push no-touch">
 		{% block content %} {% endblock %}
 	</body>

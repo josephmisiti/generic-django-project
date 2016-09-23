@@ -38,7 +38,7 @@ def start_celery_queues(restart_nginx=False):
 	put('config/supervisor_processing.conf', '/etc/supervisor/conf.d/processing.conf', use_sudo=True)
 	if restart_nginx:
 		sudo('supervisorctl update')
-		sudo('supervisorctl reload')	
+		sudo('supervisorctl reload')
 		sudo("/etc/init.d/nginx restart")
 
 
@@ -49,8 +49,8 @@ def deploy(has_migration=False):
 		run('git pull origin %s' % env.BRANCH_NAME )
 		run('./manage.py migrate')
 		compress_assets()
-		transfer_assets()	
-			
+		transfer_assets()
+
 		if is_staging:
 			settings_file = 'rewire/local_settings.staging'
 		else:
@@ -102,14 +102,14 @@ def setup_installs():
 	sudo('apt-get -y update')
 	sudo('DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes upgrade')
 	sudo('DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes install %s' % ' '.join(packages))
-		
+
 	with settings(warn_only=True):
 		sudo('mkdir -p %s' % env.VENDOR_PATH)
 		sudo('chown %s.%s %s' % (env.user, env.user, env.VENDOR_PATH))
 
-	
+
 def setup_nginx():
-	""" installs latest NGINX from source """	
+	""" installs latest NGINX from source """
 	NGINX_VERSION = '1.7.3'
 	with cd(env.MAIN_PROJECT_PATH), settings(warn_only=True):
 		sudo("groupadd nginx")
@@ -121,7 +121,7 @@ def setup_nginx():
 			run('./configure --with-http_ssl_module --with-http_stub_status_module --with-http_gzip_static_module')
 			run('make')
 			sudo('make install')
-			
+
 def soft_deploy(has_migration=False):
 	""" If you are running a migration, you need a full restart """
 	with cd(env.MAIN_PROJECT_PATH):
@@ -151,13 +151,13 @@ def config_nginx(restart=False):
 	sudo("/usr/sbin/update-rc.d -f nginx defaults")
 	if restart:
 		sudo("/etc/init.d/nginx restart")
-	
-	
+
+
 def compress_assets(bundle=False):
 	""" Use jammit to compress asset """
 	with cd(env.MAIN_PROJECT_PATH):
-		run('jammit -c assets.yml --base-url http://{{ cookiecutter.project_name }} --output static')
-		print(cyan("building shit on server"))
+		#run('jammit -c assets.yml --base-url http://{{ cookiecutter.project_name }} --output static')
+		# print(cyan("building shit on server"))
 
 def transfer_assets():
 	""" Transfer compressed assets to EC2 """
@@ -179,7 +179,7 @@ def setup_postgres(add_to_list=False):
 		sudo('echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" >> /etc/apt/sources.list.d/pgdg.list')
 		sudo('wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -')
 		sudo('sudo apt-get update')
-	
+
 	shmmax = 2300047872
 	sudo('wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -')
 	sudo('apt-get update')
@@ -190,4 +190,3 @@ def setup_postgres(add_to_list=False):
 	sudo('sysctl -p')
 	sudo('/etc/init.d/postgresql stop')
 	sudo('/etc/init.d/postgresql start')
-	

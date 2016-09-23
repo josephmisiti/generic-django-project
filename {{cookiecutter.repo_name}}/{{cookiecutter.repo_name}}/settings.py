@@ -36,7 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'apps.static'
+
+    '{{ cookiecutter.repo_name }}.accounts',
+    '{{ cookiecutter.repo_name }}.core'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,4 +84,3 @@ AUTH_USER_MODEL = 'accounts.User'
 
 
 from local_settings import *
-

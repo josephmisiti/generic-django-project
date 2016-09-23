@@ -17,8 +17,9 @@ US_STATES += ("INTL","International"),
 import logging as log
 logging = log.getLogger(__name__)
 
+
 class User(AbstractBaseUser, PermissionsMixin):
-	
+
 	class Meta:
 		app_label = 'accounts'
 		db_table = "auth_user"
@@ -41,7 +42,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 	state = models.CharField(max_length=4, blank=True, choices=US_STATES, help_text="State of the user")
 	country = models.CharField(max_length=50, blank=True, help_text="Country of the user")
 	zipcode = models.CharField(max_length=25, blank=True, help_text="Zipcode name of the user")
-	
+
 	is_staff = models.BooleanField(_('staff status'), default=False,
 		help_text=_('Designates whether the user can log into this admin '
 					'site.'))
@@ -49,14 +50,14 @@ class User(AbstractBaseUser, PermissionsMixin):
 		help_text=_('Designates whether this user should be treated as '
 					'active. Unselect this instead of deleting accounts.'))
 	date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
-	
+
 	password_hash = models.CharField(max_length=50,null=True,help_text="Forgot password hash")
-		
+
 	objects = UserManager()
-	
+
 	USERNAME_FIELD = 'username'
 	REQUIRED_FIELDS = ['email']
-	
+
 	def get_full_name(self):
 		return self.full_name
 
