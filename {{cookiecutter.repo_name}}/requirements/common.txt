@@ -1,8 +1,10 @@
-Django==1.7.2
-psycopg2
-boto
-Fabric
-django-tastypie
+Django==1.9.2
 
-# asset compression
-pyyaml
+pytest
+pytest-django
+
+django-extensions==1.6.1
+djangorestframework==3.3.2
+django-filter
+django-redis-cache
+django-redis-sessions
