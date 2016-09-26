@@ -9,3 +9,5 @@ django-redis-sessions
 
 pytest
 pytest-django
+
+juptyer
