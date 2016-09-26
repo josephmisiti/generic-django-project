@@ -1,10 +1,11 @@
 Django==1.9.2
-
-pytest
-pytest-django
+psycopg2
 
 django-extensions==1.6.1
 djangorestframework==3.3.2
 django-filter
 django-redis-cache
 django-redis-sessions
+
+pytest
+pytest-django
