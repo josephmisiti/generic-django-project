@@ -9,5 +9,8 @@ router = routers.DefaultRouter(trailing_slash=True)
 
 urlpatterns = patterns('',
     url(r'^', include(router.urls)),
-    url(r'^api/v1/token', auth_views.obtain_auth_token)                   
+    
+    # API calls
+    url(r'^api/v1/', include('{{cookiecutter.repo_name}}.accounts.api_urls')),
+    
 )
