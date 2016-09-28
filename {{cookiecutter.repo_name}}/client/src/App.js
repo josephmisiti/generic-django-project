@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
 
-class App extends Component {
+class App1 extends Component {
   render() {
     return (
       <div className="App">
@@ -10,5 +9,5 @@ class App extends Component {
     );
   }
 }
-dddd
+
 export default App;
