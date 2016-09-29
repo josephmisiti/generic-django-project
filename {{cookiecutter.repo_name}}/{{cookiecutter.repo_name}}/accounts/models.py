@@ -6,9 +6,15 @@ from django.core import validators
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin, UserManager)
-from django.template.loader import render_to_string
 from django.core.urlresolvers import reverse
 from django.conf import settings
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+
+from model_utils import Choices
+from model_utils.models import TimeStampedModel
+
+from rest_framework.authtoken.models import Token
 
 
 logger = logging.getLogger(__name__)
