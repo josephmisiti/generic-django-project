@@ -74,6 +74,34 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REDIS = {
+    'SESSIONS': {
+        'HOST': 'localhost',
+        'PORT': 6379,
+        'DB': 1,
+    },
+}
+
+SESSION_ENGINE = 'redis_sessions.session'
+SESSION_REDIS_HOST = REDIS['SESSIONS']['HOST']
+SESSION_REDIS_PORT = REDIS['SESSIONS']['PORT']
+SESSION_REDIS_DB = REDIS['SESSIONS']['DB']
+
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+
 DATABASES = {
     'default': {
         'ENGINE'    : 'django.db.backends.postgresql_psycopg2',

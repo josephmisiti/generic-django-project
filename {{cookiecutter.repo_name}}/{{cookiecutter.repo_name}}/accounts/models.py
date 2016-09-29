@@ -9,8 +9,7 @@ from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin, User
 from django.template.loader import render_to_string
 from django.core.urlresolvers import reverse
 from django.conf import settings
-from django.db.models import Q
-from django.core.exceptions import PermissionDenied
+
 
 logger = logging.getLogger(__name__)
 
@@ -49,3 +48,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_short_name(self):
         return self.username
+        
+        
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)

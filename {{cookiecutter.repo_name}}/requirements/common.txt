@@ -11,3 +11,4 @@ pytest
 pytest-django
 
 jupyter
+fabric
