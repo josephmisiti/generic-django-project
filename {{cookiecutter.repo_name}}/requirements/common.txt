@@ -1,5 +1,10 @@
-Django==1.9.2
+Django==1.9.9
 psycopg2
+
+django-model-utils
+django-pgfields
+djorm-pgarray
+django-localflavor
 
 django-extensions==1.6.1
 djangorestframework==3.3.2
