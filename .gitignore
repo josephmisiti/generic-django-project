@@ -3,3 +3,5 @@
 *.pot
 *.pyc
 local_settings.py
+*.db
+node_modules/
