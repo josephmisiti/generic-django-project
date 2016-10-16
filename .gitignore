@@ -1,7 +1,8 @@
-.DS_Store
-*.log
-*.pot
+!hours/static_local/build/.gitkeep
+hours/static_local/build/*.js
 *.pyc
-local_settings.py
+*.log
 *.db
+.DS_Store
 node_modules/
+
