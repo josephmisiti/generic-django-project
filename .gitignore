@@ -1,5 +1,5 @@
-!hours/static_local/build/.gitkeep
-hours/static_local/build/*.js
+!{{cookiecutter.repo_name}}/static_local/build/.gitkeep
+{{cookiecutter.repo_name}}/static_local/build/*.js
 *.pyc
 *.log
 *.db
