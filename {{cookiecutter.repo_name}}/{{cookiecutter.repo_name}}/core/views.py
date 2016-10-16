@@ -3,6 +3,9 @@ from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import requires_csrf_token
 from django.shortcuts import render
 
+def index_view(request):
+    return render(request, 'static/index.html', {}, status=200)
+
 @requires_csrf_token
 def page_404(request): 
 	response = render(request, '404.html')
